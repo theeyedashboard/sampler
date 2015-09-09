@@ -10,7 +10,7 @@ hostname = socket.gethostname()
 @app.route("/")
 def index():
     sampler = Sampler()
-    return "Sampler running on {}\n".format(sampler.extract())
+    return sampler.extract()
 
 if __name__ == "__main__":
     app.debug = True
