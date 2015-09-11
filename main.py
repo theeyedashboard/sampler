@@ -1,4 +1,4 @@
-from flask import Flask, Response
+from flask import Flask, Response, jsonify
 import socket
 import time
 from lib.Sampler import Sampler
@@ -10,7 +10,7 @@ hostname = socket.gethostname()
 @app.route("/")
 def index():
     sampler = Sampler()
-    return sampler.extract()
+    return jsonify(sampler.extract())
 
 if __name__ == "__main__":
     app.debug = True
